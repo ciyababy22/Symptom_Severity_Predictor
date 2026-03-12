@@ -42,7 +42,7 @@ Symptom_Severity_Prototype/
 ```bash
 git clone <your-repo-url>
 cd Symptom_Severity_Prototype
-
+---
 2. Create and activate a virtual environment:
 
 python -m venv venv
