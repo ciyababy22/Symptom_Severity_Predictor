@@ -63,7 +63,7 @@ fever, cough, fatigue
 ```
 5. Output shows:
 ```
-Symptom
+Symptoms Summary
 Predicted severity (Low / Moderate / High)
 Advice based on risk level
 ```
