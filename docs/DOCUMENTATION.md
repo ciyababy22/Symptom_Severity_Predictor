@@ -26,7 +26,7 @@ This prototype predicts **severity of symptoms** (Low, Moderate, High) using a *
 User Input → Preprocess Symptoms → Calculate Scores → Classify Risk → Display Result
 
 ## 4. Folder Structure
-
+```
 Symptom_Severity_Prototype
 ├── src/
 │   └── severity_predictor.py      # Core logic
@@ -39,7 +39,7 @@ Symptom_Severity_Prototype
 ├── requirements.txt               # Dependencies
 └── README.md                      # Project overview
 
-
+```
 ## 5. Symptom Scoring Table
 ```
 | Symptom                            | Score | Risk Level      |
