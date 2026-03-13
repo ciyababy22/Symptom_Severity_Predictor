@@ -1,16 +1,8 @@
-# Symptom Severity Prediction Prototype
+# Symptom Severity Predictor Prototype
 
 ## Overview
 
-This project is a \*\*standalone prototype\*\* for predicting the severity of symptoms. It classifies user-entered symptoms into \*\*Low Risk, Moderate Risk, or High Risk\*\* using a \*\*rule-based scoring system\*\*.  
-
-
-
-This module can be later integrated into healthcare applications like AI chatbots or symptom trackers.
-
-
-
----
+This project is a **standalone prototype** for predicting the severity of symptoms. It classifies user-entered symptoms into **Low Risk, Moderate Risk, or High Risk** using a **rule-based scoring system**.  
 
 ## Features
 
@@ -23,17 +15,19 @@ This module can be later integrated into healthcare applications like AI chatbot
 - Unit tested with pytest  
 
 ## Folder Structure
-
+```
 Symptom_Severity_Prototype
-├── src/severity_predictor.py # Core logic
-├── app/demo_app.py # Interactive demo
-├── tests/test_severity.py # Unit tests
-├── docs/DOCUMENTATION.md # Detailed documentation
-├── requirements.txt # Dependencies
-└── README.md # This file
-
-
----
+├── src/
+│   └── severity_predictor.py      # Core logic
+├── app/
+│   └── demo_app.py                # Interactive demo
+├── tests/
+│   └── test_severity.py           # Unit tests
+├── docs/
+│   └── DOCUMENTATION.md           # Detailed documentation
+├── requirements.txt               # Dependencies
+└── README.md                      # Project overview
+```
 
 ## Setup
 
@@ -75,17 +69,17 @@ Tests check low, moderate, and high-risk scenarios with readable output.
 
 7. Example Input/Output
 
-Input:
-headache, fatigue
-
-Output:
-Predicted Risk: Low Risk
-Advice: Symptoms are mild. Monitor and rest.
+    Input:
+    headache, fatigue
+    
+    Output:
+    Predicted Risk: Low Risk
+    Advice: Symptoms are mild. Monitor and rest.
 
 8. Future Enhancements
--Machine learning-based classification
--Web interface or chatbot integration
--Expanded symptom database for more accurate predictions
+    -Machine learning-based classification.
+    -Web interface or chatbot integration.
+    -Expanded symptom database for more accurate predictions.
 
 
 
