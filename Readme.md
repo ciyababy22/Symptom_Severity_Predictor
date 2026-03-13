@@ -24,7 +24,7 @@ This module can be later integrated into healthcare applications like AI chatbot
 
 ## Folder Structure
 
-Symptom_Severity_Prototype/
+Symptom_Severity_Prototype
 ├── src/severity_predictor.py # Core logic
 ├── app/demo_app.py # Interactive demo
 ├── tests/test_severity.py # Unit tests
@@ -40,15 +40,15 @@ Symptom_Severity_Prototype/
 1. Clone the repository:
 
 ```bash
-git clone <your-repo-url>
-cd Symptom_Severity_Prototype
-
+`git clone <your-repo-url>
+`cd Symptom_Severity_Prototype
+```
 2. Create and activate a virtual environment:
-
-python -m venv venv
-.\venv\Scripts\activate   # Windows
-# source venv/bin/activate   # Linux/macOS
-
+```
+`python -m venv venv
+`.\venv\Scripts\activate   # Windows
+`venv/bin/activate   # Linux/macOS
+```
 3. Install dependencies:
 pip install -r requirements.txt
 
