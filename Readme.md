@@ -52,8 +52,7 @@ pip install -r requirements.txt
 Run the demo app:
 ```
 python -m app.demo\_app
-Enter your symptoms separated by commas, e.g.:
-fever, cough, fatigue
+Enter your symptoms separated by commas, *(e.g.: fever, cough, fatigue)*
 ```
 5. Output shows:
 ```
