@@ -40,34 +40,41 @@ Symptom_Severity_Prototype
 1. Clone the repository:
 
 ```bash
-`git clone <your-repo-url>
-`cd Symptom_Severity_Prototype
+git clone <your-repo-url>
+cd Symptom_Severity_Prototype
 ```
 2. Create and activate a virtual environment:
 ```
-`python -m venv venv
-`.\venv\Scripts\activate   # Windows
-`venv/bin/activate   # Linux/macOS
+python -m venv venv
+.\venv\Scripts\activate   # Windows
+venv/bin/activate   # Linux/macOS
 ```
 3. Install dependencies:
+```
 pip install -r requirements.txt
-
+```
 4. Usage
+
 Run the demo app:
+```
 python -m app.demo\_app
 Enter your symptoms separated by commas, e.g.:
 fever, cough, fatigue
-
+```
 5. Output shows:
+```
 Symptom
 Predicted severity (Low / Moderate / High)
 Advice based on risk level
-
+```
 6. Running Unit Tests
+```
 pytest -v -s
+```
 Tests check low, moderate, and high-risk scenarios with readable output.
 
 7. Example Input/Output
+
 Input:
 headache, fatigue
 
