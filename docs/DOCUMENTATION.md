@@ -68,29 +68,28 @@ Symptom_Severity_Prototype
 pytest -v -s
 ```
 Tests include:
--Low-risk scenarios
--Moderate-risk scenarios
--High-risk scenarios
+- Low-risk scenarios
+- Moderate-risk scenarios
+- High-risk scenarios
 
 Outputs symptom scores, expected vs predicted risk, and PASS/FAIL
 
 ## 8. Setup Instructions
 
--Clone repository
--Create virtual environment
--Install dependencies via pip install -r requirements.txt
--Run demo or unit tests
+- Clone repository.
+- Create virtual environment.
+- Install dependencies via pip install -r requirements.txt.
+- Run demo or unit tests.
 
 ## 9. Future Enhancements
 
--Add ML-based classifier for dynamic predictions.
--Extend symptoms database.
--Web or chatbot interface.
--Integrate confidence scoring.
+- Add ML-based classifier for dynamic predictions.
+- Extend symptoms database.
+- Web or chatbot interface.
+- Integrate confidence scoring.
 
 ## 10. Contribution Guidelines
 
--Keep prototype standalone.
--Update documentation and tests for any new symptoms.
-
-Use src/SymptomSeverityPredictor.py for integration in larger projects.
+- Keep prototype standalone.
+- Update documentation and tests for any new symptoms.
+- Use src/SymptomSeverityPredictor.py for integration in larger projects.
