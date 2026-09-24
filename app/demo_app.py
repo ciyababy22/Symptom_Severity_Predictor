@@ -1,64 +1,98 @@
 """
-Demo Application for Symptom Severity Prediction
+Severity Predictor Module
 
-This script provides a simple CLI interface for users to input symptoms
-and receive a severity classification with advice.
+This module provides a rule-based implementation for predicting
+symptom severity based on predefined symptom scores.
 """
 
-import sys
-import os
-from colorama import Fore, Style, init
-
-# Initialize colorama
-init(autoreset=True)
-
-# Add root folder to path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-from src.severity_predictor import SymptomSeverityPredictor
-
-
-# Module-level constant (BEST PRACTICE)
-RISK_DESCRIPTIONS = {
-    "Low Risk": "Symptoms are mild. Monitor and rest.",
-    "Moderate Risk": "Symptoms are moderate. Consider consulting a doctor.",
-    "High Risk": "Symptoms are severe. Seek medical attention immediately."
-}
-
-
-def main():
+class SymptomSeverityPredictor:
     """
-    Run the CLI demo for symptom severity prediction.
+    Predicts symptom severity using a rule-based scoring system.
+
+    Each symptom is assigned a severity score between 1 and 5.
+    The total score determines the risk category:
+
+    - Total score ≤ 3  → Low Risk
+    - Total score 4–7  → Moderate Risk
+    - Total score ≥ 8  → High Risk
     """
-    predictor = SymptomSeverityPredictor()
 
-    print("=== Symptom Severity Prediction Prototype ===\n")
+    def __init__(self):
+        """
+        Initialize the predictor with a predefined symptom scoring table.
+        """
+        self.symptom_scores = {
 
-    user_input = input("Enter your symptoms separated by commas: ")
-    symptoms = [s.strip() for s in user_input.split(",") if s.strip()]
+            # Mild Symptoms (1 point)
+            "headache": 1,
+            "fatigue": 1,
+            "sore throat": 1,
+            "runny nose": 1,
+            "loss of appetite": 1,
+            "skin rash": 1,
+            "mild cough": 1,
+            "mild fever": 1,
+            "muscle weakness": 1,
+            "chills": 1,
 
-    if not symptoms:
-        print("No symptoms entered. Exiting...")
-        return
+            # Moderate Symptoms (2–3 points)
+            "fever": 2,
+            "cough": 2,
+            "body ache": 2,
+            "nausea": 2,
+            "vomiting": 2,
+            "diarrhea": 2,
+            "loss of taste": 2,
+            "loss of smell": 2,
+            "dizziness": 2,
+            "moderate shortness of breath": 2,
+            "moderate headache": 2,
+            "moderate fatigue": 2,
+            "high fever": 3,
+            "persistent cough": 3,
+            "chest tightness": 3,
+            "abdominal pain": 3,
+            "persistent vomiting": 3,
+            "severe diarrhea": 3,
 
-    risk = predictor.predict_severity(symptoms)
+            # Severe Symptoms (4–5 points)
+            "shortness of breath": 5,
+            "chest pain": 5,
+            "wheezing": 4,
+            "rapid heartbeat": 4,
+            "confusion": 5,
+            "bluish lips or face": 5,
+            "severe dehydration": 5,
+            "loss of consciousness": 5,
+            "severe chest tightness": 5,
+            "persistent high fever": 5,
+            "extreme fatigue": 5,
+            "severe dizziness": 4,
+            "difficulty speaking": 5,
+            "severe headache": 5,
+            "severe nausea": 4,
+            "severe abdominal pain": 5,
+            "persistent vomiting and diarrhea": 5,
+            "severe body ache": 4,
+            "confusion and disorientation": 5,
+            "difficulty breathing": 5
+        }
 
-    # Color mapping
-    color_map = {
-        "Low Risk": Fore.GREEN,
-        "Moderate Risk": Fore.YELLOW,
-        "High Risk": Fore.RED
-    }
+    def predict_severity(self, symptoms):
+        """
+        Predict the severity level based on input symptoms.
 
-    color = color_map.get(risk, Fore.WHITE)
+        Args:
+            symptoms (list[str]): List of symptom names provided by the user.
 
-    print("\n=== Symptoms Summary ===")
-    for s in symptoms:
-        print(f"- {s.title()}")
+        Returns:
+            str: Severity classification ('Low Risk', 'Moderate Risk', 'High Risk').
+        """
+        total_score = sum(self.symptom_scores.get(s.lower(), 0) for s in symptoms)
 
-    print("\nPredicted Severity:", color + risk + Style.RESET_ALL)
-    print("Advice:", RISK_DESCRIPTIONS[risk])
-
-
-if __name__ == "__main__":
-    main()
+        if total_score <= 3:
+            return "Low Risk"
+        elif total_score <= 7:
+            return "Moderate Risk"
+        else:
+            return "High Risk"
